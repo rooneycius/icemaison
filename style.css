@@ -1,0 +1,35 @@
+// script.js
+
+const products = [
+  {
+    name: "Diamond Cuban Link Chain",
+    image: "https://www.avianneandco.com/media/catalog/product/cache/1/image/600x600/9df78eab33525d08d6e5fb8d27136e95/d/i/diamond_miami_cuban_link_chain_11mm_10kt_yg.png",
+    price: 5500 * 1.1
+  },
+  {
+    name: "Gold Ring with Diamonds",
+    image: "https://www.avianneandco.com/media/catalog/product/cache/1/image/600x600/9df78eab33525d08d6e5fb8d27136e95/d/i/diamond_ring_gold_14kt.png",
+    price: 2800 * 1.1
+  },
+  {
+    name: "Luxury Iced Out Watch",
+    image: "https://www.avianneandco.com/media/catalog/product/cache/1/image/600x600/9df78eab33525d08d6e5fb8d27136e95/l/u/luxury_watch_diamonds.png",
+    price: 7200 * 1.1
+  }
+];
+
+const productList = document.querySelector(".product-list");
+
+products.forEach(product => {
+  const productDiv = document.createElement("div");
+  productDiv.className = "product";
+
+  productDiv.innerHTML = `
+    <img src="${product.image}" alt="${product.name}" />
+    <h2>${product.name}</h2>
+    <p>$${product.price.toFixed(2)}</p>
+    <button>Add to Cart</button>
+  `;
+
+  productList.appendChild(productDiv);
+});
